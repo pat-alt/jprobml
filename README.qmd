@@ -1,0 +1,57 @@
+---
+title: "jprobml"
+---
+
+# jprobml
+
+A Julia companion to Kevin Murphy's book series [Probabilistic Machine Learning](http://probml.ai). 
+
+## Contribute 🛠️
+
+This repo is currently still very much bare-bones and contributions of any shape or form are very much welcome. They could include any of the following:
+
+- Notebooks involving Julia code that reproduce figures from the book.
+- Plain `.jl` code files that implement algorithms/concepts from the book. 
+- Links to blog posts that reference the book (that involve Julia code).
+- Links to Julia packages that implement algorithms/concepts from the book. 
+
+### Recommended Workflow
+
+This repo should be treated as an `Application <: Project` as defined [here](https://discourse.julialang.org/t/distinguishing-projects-from-packages/153/41?u=pat-alt). In other words, while this is not meant to be a reusable package, let's try to comply with some standard dev practices to keep things organized and reproducible. 
+
+In particular, note that the source tree has a standard layout and the repo contains a `Projects.toml` and `Manifest.toml` file:
+
+```{julia}
+#| 
+using PrintFileTree
+printfiletree(".")
+```
+
+The `dev/misc/` folder currently contains some old files that still lived in this repo when it was first forked. Consider the `dev` a place to store miscellaneous things that don't fit well into the standard layout. For all other things we recommend the following:
+
+1. Store all notebooks (Jupyter/Quarto) in the relevant `docs/src/bookX/cX` folder.
+2. Store all pure Julia files (including `Pluto.jl` files) in the relevant `src/bookX/cX` folder. 
+3. If using Quarto, try to rely on the global meta settings specified in `docs/src/_metavariables.yml`.
+4. If using Jupyter, consider also tapping into the additional functionality that Quarto provides.
+5. "Credit where it's due" - should you somebody else's work, cite them and add the references to `bib.bib`. 
+6. Work in the Julia environment specified by `Project.toml`. Add your own deps as needed. 
+7. When implementing things from scratch (often a great thing to do!) try to also point to packages that can be used for the specific thing (should they exist).
+8. Ideally, add some unit tests in `test/` to make sure that your code checks out. 
+9. Before you code anything up from scratch, take a look at the `dev/misc` folder and see if there's anything you may want to recycle.
+
+Finally:
+
+10. **Go nuts** 🌰! 
+
+In other words, just code away without too much concern about mistakes, code performance, efficiency, formatting, ... Don't get us wrong - you should of course always try to write good code, follow best practices and implement things correctly. But this is not a package. It's meant to be a community-driven playground where anyone should feel encouraged to try things, guided by Kevin Murphy's amazing books. Mistakes happen and the great thing about open-source is that somebody will point them out or even fix them eventually. 
+
+## Blog posts 🗞️ 
+
+- [Bayesian Logistic Regression: From scratch in Julia language](https://towardsdatascience.com/bayesian-logistic-regression-53df017ba90f)
+
+## Packages 📦
+
+- [`Turing.jl`]()
+- [`LaplaceRedux.jl`]()
+- [`ConformalPrediction.jl`]()
+

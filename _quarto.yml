@@ -1,0 +1,12 @@
+project:
+  title: "jprobml"
+  execute-dir: project
+
+bibliography: bib.bib
+
+execute: 
+  output: false
+  echo: true
+  eval: true
+  freeze: auto
+
